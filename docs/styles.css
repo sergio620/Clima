@@ -1,0 +1,164 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+  color: white;
+}
+
+body {
+  /* https://www.youtube.com/watch?v=-sF5KsEo6gM */
+  height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  padding: 0 2em;
+  background: linear-gradient(135deg, #1c92d2 0%, #f2fcfe 100%);
+  /* https://stackoverflow.com/questions/7427331/css-background-gradient-repeat-issue */
+  background-attachment: fixed;
+}
+
+.current {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  flex: 6;
+  margin-bottom: 4em;
+}
+
+.search {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+}
+
+.search > div {
+  height: 100%;
+  padding: 0.8em 3em 0em;
+  flex: 0 0 480px;
+  display: flex;
+}
+
+.search > div > input {
+  height: 100%;
+  border-radius: 4px;
+  text-align: center;
+  color: black;
+  padding: 0.5em;
+  flex: 9;
+}
+
+.search > div > button {
+  height: 100%;
+  flex: 1;
+}
+.fa-search {
+  color: black;
+}
+
+.conditions {
+  display: flex;
+  flex: 5;
+  flex-flow: row wrap;
+}
+
+.conditions > .condition {
+  flex: 0 0 480px;
+  display: grid;
+  grid: repeat(8, 1fr) / repeat(2, minmax(240px, 1fr));
+  padding-left: 2em;
+}
+
+.condition > :nth-child(-n + 2) {
+  align-self: end;
+}
+
+.condition > img {
+  grid-area: 3/1/-1/2;
+  justify-self: stretch;
+  align-self: stretch;
+  object-fit: contain;
+}
+
+.condition > :nth-child(2) {
+  grid-area: 2;
+}
+
+.condition > :nth-child(4) {
+  grid-area: 3/-2/-2/-1;
+  font-size: 8.2em;
+  text-align: center;
+  padding: 0.5em 0em;
+}
+
+.condition > :nth-child(5) {
+  text-align: center;
+  padding: 1.2em 0em;
+  grid-area: -2;
+}
+
+.conditions > .other-data {
+  flex: 1;
+  flex-basis: 480px;
+  display: grid;
+  grid: repeat(2, 1fr) / repeat(3, 1fr);
+}
+
+.other-data > * {
+  justify-self: center;
+  align-self: end;
+}
+
+.other-data > * > p {
+  padding: 1em;
+}
+
+.other-data > * > :nth-child(1) {
+  font-weight: 900;
+}
+
+.other-data > * > :nth-child(2) {
+  font-weight: 100;
+  color: #413b3b;
+}
+
+.forecast {
+  width: 100%;
+  flex: 4;
+  display: flex;
+  flex-direction: column;
+  padding-top: 4em;
+}
+
+.forecast > h3 {
+  flex: 1;
+  padding-left: 2em;
+}
+
+.forecast > .today-forecast {
+  flex: 9;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+}
+
+.today-forecast > div {
+  flex: 1;
+  margin: 2em;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  padding: 1em;
+  background: linear-gradient(90deg, #1c92d2 0%, #f2fcfe 100%);
+}
+
+.today-forecast > div > :nth-child(1) {
+  flex: 1;
+  text-align: center;
+}
+
+.today-forecast > div > :nth-child(2) {
+  flex: 2;
+}
+
+.today-forecast > div > :nth-child(3) {
+  flex: 1;
+  text-align: center;
+}
