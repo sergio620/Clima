@@ -7,13 +7,8 @@ import "dotenv/config";
 const PORT = 4000;
 
 const app = express();
-app.use(express.static("./docs"));
+app.use(express.static("./public"));
 app.use(express.json());
-
-app.get("/", (req, res) => {
-  console.log(req.body);
-  res.render("index.html");
-});
 
 app.post("/", async (req, res) => {
   console.log(req.body);
@@ -25,7 +20,6 @@ app.post("/", async (req, res) => {
     res.json(response.data);
   } catch (error) {
     console.log("Error: ", error);
-    console.log(error);
   }
 });
 

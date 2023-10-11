@@ -6,9 +6,11 @@ searchLocation.addEventListener("click", (event) => {
   console.log(event.target.tagName);
   if (event.target.tagName == "BUTTON") {
     const location = event.target.parentNode.childNodes[1].value;
+    event.target.parentNode.childNodes[1].value = "";
     search(location);
   } else if (event.target.tagName == "I") {
     const location = event.target.parentNode.parentNode.childNodes[1].value;
+    event.target.parentNode.parentNode.childNodes[1].value = "";
     search(location);
   }
 });

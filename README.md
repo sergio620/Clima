@@ -8,17 +8,9 @@ Esta es una aplicación de clima en JavaScript que te permite obtener informaci�
 
 - **Pronóstico Diario:** Además del clima actual, la aplicación proporciona un pronóstico para el día, incluyendo las temperaturas máximas y mínimas esperadas, así como una descripción del clima para las próximas horas.
 
-## Cómo Usar
+[![Screenshot-1.png](https://i.postimg.cc/ZRqSMZJC/Screenshot-1.png)](https://postimg.cc/bG4WZ7Dh)
 
-1. Clona este repositorio a tu sistema local o descarga el código fuente.
-
-2. Abre el archivo `index.html` en tu navegador web.
-
-3. En la página web, ingresa el nombre de la ciudad de la que deseas conocer el clima y haz clic en el botón "Obtener Clima".
-
-4. La aplicación mostrará el clima actual y el pronóstico diario para la ciudad seleccionada.
-
-5. Puedes visualizar la pagina en linea: 
+[![Screenshot-2.png](https://i.postimg.cc/6QPXggqc/Screenshot-2.png)](https://postimg.cc/mc7JFdQ1)
 
 ## Tecnologías Utilizadas
 
@@ -26,4 +18,3 @@ Esta es una aplicación de clima en JavaScript que te permite obtener informaci�
 - HTML
 - CSS
 - Node.js
-
