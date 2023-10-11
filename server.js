@@ -7,7 +7,7 @@ import "dotenv/config";
 const PORT = 4000;
 
 const app = express();
-app.use(express.static("./public"));
+app.use(express.static("./docs"));
 app.use(express.json());
 
 app.get("/", (req, res) => {
