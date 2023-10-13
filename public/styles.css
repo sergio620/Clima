@@ -1,8 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
 * {
   padding: 0px;
   margin: 0px;
   box-sizing: border-box;
   color: white;
+  font-family: "Poppins", sans-serif;
 }
 
 body {
@@ -11,7 +14,8 @@ body {
   display: flex;
   flex-direction: column;
   padding: 0 2em;
-  background: linear-gradient(135deg, #1c92d2 0%, #f2fcfe 100%);
+  /* background: linear-gradient(135deg, #1c92d2 0%, #f2fcfe 100%); */
+  background: #2465a7;
   /* https://stackoverflow.com/questions/7427331/css-background-gradient-repeat-issue */
   background-attachment: fixed;
 }
@@ -32,28 +36,36 @@ body {
 
 .search > div {
   height: 100%;
-  padding: 0.8em 3em 0em;
+  margin-top: 0.8em;
   flex: 0 0 480px;
   display: flex;
 }
 
 .search > div > input {
   height: 100%;
-  border-radius: 4px;
   text-align: center;
   color: black;
   padding: 0.5em;
   flex: 9;
+  border: none;
+  border-radius: 4px 0 0 4px;
 }
 
 .search > div > button {
   height: 100%;
   flex: 1;
+  border: none;
+  background-color: #a6a6a6;
+  cursor: pointer;
+  border-radius: 0 4px 4px 0;
 }
 .fa-search {
   color: black;
 }
 
+.city {
+  margin-top: 30px;
+}
 .conditions {
   display: flex;
   flex: 5;
@@ -63,36 +75,35 @@ body {
 .conditions > .condition {
   flex: 0 0 480px;
   display: grid;
-  grid: repeat(8, 1fr) / repeat(2, minmax(240px, 1fr));
+  grid: repeat(3, 1fr) / repeat(2, minmax(240px, 1fr));
   padding-left: 2em;
 }
 
-.condition > :nth-child(-n + 2) {
-  align-self: end;
+.condition > :nth-child(1) {
+  font-size: 2em;
+}
+.condition > :nth-child(2) {
+  font-weight: 100;
 }
 
 .condition > img {
-  grid-area: 3/1/-1/2;
+  grid-area: 1/1/-1/2;
   justify-self: stretch;
   align-self: stretch;
   object-fit: contain;
 }
 
 .condition > :nth-child(2) {
-  grid-area: 2;
+  grid-area: 1/2/3/-1;
+  justify-self: center;
+  align-self: center;
+  font-size: 5em;
+  font-weight: 100;
 }
 
-.condition > :nth-child(4) {
-  grid-area: 3/-2/-2/-1;
-  font-size: 8.2em;
-  text-align: center;
-  padding: 0.5em 0em;
-}
-
-.condition > :nth-child(5) {
-  text-align: center;
-  padding: 1.2em 0em;
-  grid-area: -2;
+.condition > :nth-child(3) {
+  justify-self: center;
+  align-self: center;
 }
 
 .conditions > .other-data {
@@ -100,11 +111,15 @@ body {
   flex-basis: 480px;
   display: grid;
   grid: repeat(2, 1fr) / repeat(3, 1fr);
+  gap: 20px;
 }
 
 .other-data > * {
-  justify-self: center;
+  justify-self: stretch;
   align-self: end;
+  background: #346aa8;
+  border-radius: 12px;
+  text-align: center;
 }
 
 .other-data > * > p {
@@ -113,11 +128,13 @@ body {
 
 .other-data > * > :nth-child(1) {
   font-weight: 900;
+  font-size: 1.2em;
 }
 
 .other-data > * > :nth-child(2) {
   font-weight: 100;
-  color: #413b3b;
+  color: white;
+  font-size: 0.8em;
 }
 
 .forecast {
@@ -146,12 +163,13 @@ body {
   flex-direction: column;
   border-radius: 10px;
   padding: 1em;
-  background: linear-gradient(90deg, #1c92d2 0%, #f2fcfe 100%);
+  background-color: #346aa8;
 }
 
 .today-forecast > div > :nth-child(1) {
   flex: 1;
   text-align: center;
+  font-size: 0.8em;
 }
 
 .today-forecast > div > :nth-child(2) {
@@ -161,4 +179,5 @@ body {
 .today-forecast > div > :nth-child(3) {
   flex: 1;
   text-align: center;
+  font-size: 1.2em;
 }

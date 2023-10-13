@@ -55,26 +55,26 @@ function formatDate(dateTime) {
 }
 function writeData(data) {
   selector(
-    ".condition>h2",
+    ".city",
     data.location.region + ", " + data.location.country
   );
 
   selector(
-    ".condition > :nth-child(2)",
+    ".datetime",
     new Date(data.location.localtime).toLocaleString("es-es", {
       weekday: "long",
       day: "numeric",
       month: "long",
     })
-  ); //https://stackoverflow.com/questions/24998624/day-name-from-date-in-js
+  ); //https://stackdatetime998624/day-name-from-date-in-js
 
   document
     .querySelector(".condition > img")
     .setAttribute("src", data.current.condition.icon);
 
-  selector(".condition > :nth-child(4)", Math.floor(data.current.temp_c) + "°");
+  selector(".condition > :nth-child(2)", Math.floor(data.current.temp_c) + "°");
 
-  selector(".condition > :nth-child(5)", data.current.condition.text);
+  selector(".condition > :nth-child(3)", data.current.condition.text);
   selector(
     ".other-data > :nth-child(1) > :nth-child(1)",
     Math.floor(data.forecast.forecastday[0].day.maxtemp_c) + "°"

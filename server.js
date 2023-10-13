@@ -1,5 +1,5 @@
 import axios from "axios";
-import express from "express";
+import express, { response } from "express";
 //https://stackoverflow.com/questions/35356692/best-practice-when-using-an-api-key-in-node-js
 //https://github.com/motdotla/dotenv
 import "dotenv/config";
@@ -15,7 +15,8 @@ app.post("/", async (req, res) => {
   try {
     const response = await axios.get(
       process.env.BASE_URL +
-        `/forecast.json?key=${process.env.API_KEY}&q=${req.body.q}&lang=es`
+        `/forecast.json?key=${process.env.API_KEY}&q=${req.body.q}&lang=es`,
+      { responseType: "json" }
     );
     res.json(response.data);
   } catch (error) {
