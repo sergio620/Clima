@@ -1,5 +1,5 @@
 import axios from "axios";
-import express, { response } from "express";
+import express from "express";
 //https://stackoverflow.com/questions/35356692/best-practice-when-using-an-api-key-in-node-js
 //https://github.com/motdotla/dotenv
 import "dotenv/config";
