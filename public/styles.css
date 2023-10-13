@@ -14,7 +14,6 @@ body {
   display: flex;
   flex-direction: column;
   padding: 0 2em;
-  /* background: linear-gradient(135deg, #1c92d2 0%, #f2fcfe 100%); */
   background: #2465a7;
   /* https://stackoverflow.com/questions/7427331/css-background-gradient-repeat-issue */
   background-attachment: fixed;
