@@ -8,9 +8,9 @@ Esta es una aplicación de clima en JavaScript que te permite obtener informaci�
 
 - **Pronóstico Diario:** Además del clima actual, la aplicación proporciona un pronóstico para el día, incluyendo las temperaturas máximas y mínimas esperadas, así como una descripción del clima para las próximas horas.
 
-[![Screenshot-1.png](https://i.postimg.cc/ZRqSMZJC/Screenshot-1.png)](https://postimg.cc/bG4WZ7Dh)
+[![clima1.png](https://i.postimg.cc/x8tBfyQq/clima1.png)](https://postimg.cc/GTTXzDH1)
 
-[![Screenshot-2.png](https://i.postimg.cc/6QPXggqc/Screenshot-2.png)](https://postimg.cc/mc7JFdQ1)
+[![clima2.png](https://i.postimg.cc/9FDLwjtL/clima2.png)](https://postimg.cc/bsjx4W5n)
 
 ## Tecnologías Utilizadas
 
