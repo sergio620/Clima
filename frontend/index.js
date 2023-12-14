@@ -28,18 +28,21 @@ function search(location) {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
-      "Accept": "application/json",
+      Accept: "application/json",
     },
     body: JSON.stringify({
       q: location,
     }),
   };
 
-  fetch("/", options)
+  fetch("http://localhost:4000/", options)
     .then((res) => res.json())
     .then((data) => {
-      console.log(data);
+      console.log("Console in frontend: ", data);
       writeData(data);
+    })
+    .catch((error) => {
+      console.log(error);
     });
 }
 function selector(querySelector, content) {
@@ -54,10 +57,7 @@ function formatDate(dateTime) {
   return hours + ampm;
 }
 function writeData(data) {
-  selector(
-    ".city",
-    data.location.region + ", " + data.location.country
-  );
+  selector(".city", data.location.region + ", " + data.location.country);
 
   selector(
     ".datetime",
