@@ -35,7 +35,7 @@ function search(location) {
     }),
   };
 
-  fetch("http://localhost:4000/", options)
+  fetch("https://clima-7bmz.onrender.com/", options)
     .then((res) => res.json())
     .then((data) => {
       console.log("Console in frontend: ", data);
