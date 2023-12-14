@@ -17,6 +17,12 @@ searchLocation.addEventListener("click", (event) => {
 input.addEventListener("keydown", (event) => {
   if (event.key == "Enter") {
     console.log(event.target.value);
+    document.querySelector(
+      "body > div.current > div.search > div > input[type=text]"
+    ).disabled = true;
+    document.querySelector(
+      "body > div.current > div.search > div > button"
+    ).disabled = true;
     const location = event.target.value;
     event.target.value = "";
     search(location);
@@ -36,13 +42,24 @@ function search(location) {
   };
 
   fetch("https://clima-7bmz.onrender.com/", options)
-    .then((res) => res.json())
+    .then((response) => {
+      if (response.ok) {
+        document.querySelector(
+          "body > div.current > div.search > div > input[type=text]"
+        ).disabled = false;
+        document.querySelector(
+          "body > div.current > div.search > div > button"
+        ).disabled = false;
+        return response.json();
+      }
+      throw new Error("Request failed");
+    })
     .then((data) => {
       console.log("Console in frontend: ", data);
       writeData(data);
     })
     .catch((error) => {
-      console.log(error);
+      console.log("Network error: ", error);
     });
 }
 function selector(querySelector, content) {
