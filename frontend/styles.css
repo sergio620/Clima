@@ -10,49 +10,41 @@
 
 body {
   /* https://www.youtube.com/watch?v=-sF5KsEo6gM */
-  height: 100dvh;
-  display: flex;
-  flex-direction: column;
+  /*  height: 100dvh;*/
   padding: 0 2em;
   background: #2465a7;
   /* https://stackoverflow.com/questions/7427331/css-background-gradient-repeat-issue */
   background-attachment: fixed;
+  min-width: 360px;
 }
 
 .current {
-  display: flex;
-  flex-direction: column;
-  width: 100%;
-  flex: 6;
   margin-bottom: 4em;
 }
 
 .search {
-  display: flex;
-  flex: 1;
-  justify-content: center;
+  padding: 8px 0;
 }
-
 .search > div {
-  height: 100%;
-  margin-top: 0.8em;
-  flex: 0 0 480px;
   display: flex;
+}
+@media (min-width: 640px) {
+  .search > div {
+    width: 50%;
+    margin: auto;
+  }
 }
 
 .search > div > input {
-  height: 100%;
   text-align: center;
   color: black;
   padding: 0.5em;
-  flex: 9;
+  flex-grow: 1;
   border: none;
   border-radius: 4px 0 0 4px;
 }
 
 .search > div > button {
-  height: 100%;
-  flex: 1;
   border: none;
   background-color: #a6a6a6;
   cursor: pointer;
@@ -60,22 +52,21 @@ body {
 }
 .fa-search {
   color: black;
+  width: 40px;
 }
 
-.city {
-  margin-top: 30px;
-}
 .conditions {
   display: flex;
-  flex: 5;
   flex-flow: row wrap;
 }
 
-.conditions > .condition {
-  flex: 0 0 480px;
-  display: grid;
-  grid: repeat(3, 1fr) / repeat(2, minmax(240px, 1fr));
-  padding-left: 2em;
+@media (min-width: 640px) {
+  .conditions > .condition {
+    /*  flex: 0 0 480px; */
+    display: grid;
+    grid: repeat(3, 1fr) / repeat(2, minmax(240px, 1fr));
+    padding-left: 2em;
+  }
 }
 
 .condition > :nth-child(1) {
@@ -109,21 +100,29 @@ body {
   flex: 1;
   flex-basis: 480px;
   display: grid;
-  grid: repeat(2, 1fr) / repeat(3, 1fr);
+  grid: repeat(3, 1fr) / repeat(2, 1fr);
   gap: 20px;
 }
 
+@media (min-width: 640px) {
+  .conditions > .other-data {
+    grid: repeat(2, 1fr) / repeat(3, 1fr);
+  }
+}
+
 .other-data > * {
-  justify-self: stretch;
-  align-self: end;
   background: #346aa8;
   border-radius: 12px;
   text-align: center;
+  height: 140px;
+  display: flex;
+  flex-flow: column;
+  justify-content: space-around;
 }
 
-.other-data > * > p {
+/* .other-data > * > p {
   padding: 1em;
-}
+} */
 
 .other-data > * > :nth-child(1) {
   font-weight: 900;
