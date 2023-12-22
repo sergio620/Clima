@@ -179,3 +179,8 @@ body {
   text-align: center;
   font-size: 1.2em;
 }
+
+button:disabled {
+  background-color: rgba(83, 83, 95, 0.38) !important;
+  cursor: auto !important;
+}

@@ -4,6 +4,9 @@ const searchLocation = document.querySelector(".search>div>button");
 
 searchLocation.addEventListener("click", (event) => {
   console.log(event.target.tagName);
+  input.disabled = true;
+  searchLocation.disabled = true;
+  searchLocation.computedStyleMap.classList.add("searchDisabled");
   if (event.target.tagName == "BUTTON") {
     const location = event.target.parentNode.childNodes[1].value;
     event.target.parentNode.childNodes[1].value = "";
@@ -17,12 +20,8 @@ searchLocation.addEventListener("click", (event) => {
 input.addEventListener("keydown", (event) => {
   if (event.key == "Enter") {
     console.log(event.target.value);
-    document.querySelector(
-      "body > div.current > div.search > div > input[type=text]"
-    ).disabled = true;
-    document.querySelector(
-      "body > div.current > div.search > div > button"
-    ).disabled = true;
+    input.disabled = true;
+    searchLocation.disabled = true;
     const location = event.target.value;
     event.target.value = "";
     search(location);
@@ -44,12 +43,8 @@ function search(location) {
   fetch("https://clima-7bmz.onrender.com/", options)
     .then((response) => {
       if (response.ok) {
-        document.querySelector(
-          "body > div.current > div.search > div > input[type=text]"
-        ).disabled = false;
-        document.querySelector(
-          "body > div.current > div.search > div > button"
-        ).disabled = false;
+        input.disabled = false;
+        searchLocation.disabled = false;
         return response.json();
       }
       throw new Error("Request failed");
