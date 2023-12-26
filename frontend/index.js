@@ -6,7 +6,6 @@ searchLocation.addEventListener("click", (event) => {
   console.log(event.target.tagName);
   input.disabled = true;
   searchLocation.disabled = true;
-  searchLocation.computedStyleMap.classList.add("searchDisabled");
   if (event.target.tagName == "BUTTON") {
     const location = event.target.parentNode.childNodes[1].value;
     event.target.parentNode.childNodes[1].value = "";
